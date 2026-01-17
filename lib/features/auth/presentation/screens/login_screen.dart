@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mahadre/features/auth/presentation/screens/parent_dashboard.dart' show ParentDashboard;
+import 'package:mahadre/features/parent/presentation/screens/parent_dashboard.dart' show ParentDashboard;
 import 'package:provider/provider.dart';
 import '../../../../providers/auth_provider.dart';
 import 'signup_screen.dart';
 import 'forgot_password_screen.dart';
+import 'verify_email_screen.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -57,12 +58,9 @@ class _LoginScreenState extends State<LoginScreen> {
             );
           }
         } else {
-          // TODO: Navigate to email verification screen
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('الرجاء تأكيد بريدك الإلكتروني أولاً'),
-              backgroundColor: Colors.orange,
-            ),
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const VerifyEmailScreen()),
           );
         }
       }
