@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mahadre/features/auth/presentation/screens/parent_dashboard.dart' show ParentDashboard;
+import 'package:mahadre/features/parent/presentation/screens/parent_dashboard.dart' show ParentDashboard;
 import 'package:provider/provider.dart';
 import '../../../../providers/auth_provider.dart';
 import 'login_screen.dart';

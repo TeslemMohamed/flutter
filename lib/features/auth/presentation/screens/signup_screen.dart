@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../providers/auth_provider.dart';
 import 'login_screen.dart';
+import 'verify_email_screen.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -53,16 +54,9 @@ class _SignupScreenState extends State<SignupScreen> {
       );
       
       if (success && mounted) {
-        // TODO: Navigate to email verification screen or login
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('تم إنشاء الحساب بنجاح! الرجاء تأكيد بريدك الإلكتروني'),
-            backgroundColor: Colors.green,
-          ),
-        );
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const LoginScreen()),
+          MaterialPageRoute(builder: (context) => const VerifyEmailScreen()),
         );
       }
     }
